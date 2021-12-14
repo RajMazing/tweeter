@@ -1,0 +1,17 @@
+
+  
+header {
+  display:flex;
+  height:400px;
+  width:100%;
+  background-color: rgb(216, 152, 57);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background-image: url("https://coolors.co/012169-4056a1-3a9259-76c893-c8102e-d79922-efe2ba-303030");
+}
+
+.name {
+  color: #FFFFFF;
+  font-size: 150%;;
+}
