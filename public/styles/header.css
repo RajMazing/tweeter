@@ -2,9 +2,10 @@
   
 header {
   display:flex;
+  margin-top: 100px;
   height:400px;
   width:100%;
-  background-color: rgb(216, 152, 57);
+  background-color: rgb(1, 12, 17);
   flex-direction:column;
   justify-content:center;
   align-items:center;

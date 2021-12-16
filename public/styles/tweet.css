@@ -1,0 +1,72 @@
+article {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid;
+  border-left: 4px solid;
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  padding: 25px 25px 25px 25px;
+}
+
+article:hover {
+  box-shadow:8px 9px 0 #082649;
+}
+
+
+article header{
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f4f1ec;
+  background-image: none;
+  color: #545149;
+  font-size: 24px;
+  margin: 25px 20px 25px 20px;
+ 
+}
+
+article header .tweeterHandle{
+  font-weight: 600;
+  color:black;
+  display: flex;
+  margin-right: 10%;
+  
+  
+}
+
+article p {
+  border-bottom: 4px solid;
+  display: flex;
+  font-size: large;
+  font-weight: 600;
+  padding-bottom: 20px;
+  text-indent: 20px;
+}
+
+article footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 20px 25px 20px;
+  font-size: medium;
+}
+
+article footer .socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 120px;
+  color: purple;
+}
+.fas:hover { 
+  color: #d79920;
+}
+
+article header .fa-user{
+  font-size: xx-large;
+  font-weight: 600;
+}

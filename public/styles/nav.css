@@ -2,12 +2,15 @@ nav {
   display: flex;
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #390449;
   color: #FFFFFF;
   justify-content: space-between;
   align-items: end;
   z-index: 1;
   padding-right: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
   
   }
   
