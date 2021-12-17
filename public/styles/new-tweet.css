@@ -49,3 +49,13 @@ button {
 background-color: blueviolet;
 color: white;
 }
+
+.alert {
+  padding: 20px;
+  font-size:medium;
+  background-color: transparent;
+  border: 5px solid #62017a;
+  color: #5c10a3;
+  margin-bottom: 20px;
+  display: none;
+}

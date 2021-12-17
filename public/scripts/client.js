@@ -5,6 +5,12 @@
 //  */
 
 
+const escaping =  function(str) {
+  let div = document.createElement("div") 
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+};
+
 
 const data = [
   // {
@@ -41,6 +47,8 @@ const renderTweets = function (tweets) {
   }
 };
 
+
+
 const createTweetElement = function (tweet) {
   const time = timeago.format(tweet.created_at);
   let $tweet = $(`
@@ -53,7 +61,7 @@ const createTweetElement = function (tweet) {
           </div>
           <div class="tweeterHandle">${tweet.user.handle}</div>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escaping(tweet.content.text)}</p>
         <footer>
           <div>${time}</div>
           <div class="socials">
@@ -76,24 +84,30 @@ $("form").on("submit", function (e){
 
   const data = $('#tweet-text').val();
    if (data.trim() === "") {
-   return alert("Error, field cannot be blank!");
+    $(".message").html("❌ Error, you can't input an empty tweet ❌");
+    $('.alert').slideDown()
+    //  return "Error, you can't input an empty tweet";
    } else if (data.length > 140) {
-    return  alert("Character limit exceeded");
+    $(".message").html("❌ Character limit exceeded ❌");
+    $('.alert').slideDown()
+    //  return "Character limit exceeded";
    } else {
      const tweetUrl = '/tweets/';
+     $(".message").html('');
+     $('.alert').slideUp();
      $.ajax({
        method: 'POST',
        url: tweetUrl,
        data:  $(this).serialize(),
        success: function(data){
-        console.log(data);
-    }
-     })
-       .then(loadTweets());
-        $(this).children('.submit-tweet').children('.counter').val('140');
-        $('#tweet-text').val('');
-    }
-  })
+          console.log(data);
+        }
+      })
+        .then(loadTweets());
+         $('.counter').val('140');
+         $('#tweet-text').val('');
+     }
+   })
    
 
 
