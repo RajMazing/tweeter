@@ -4,13 +4,11 @@
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
 
-
-const escaping =  function(str) {
-  let div = document.createElement("div") 
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+const escaping = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
-
 
 const data = [
   // {
@@ -47,8 +45,6 @@ const renderTweets = function (tweets) {
   }
 };
 
-
-
 const createTweetElement = function (tweet) {
   const time = timeago.format(tweet.created_at);
   let $tweet = $(`
@@ -57,7 +53,7 @@ const createTweetElement = function (tweet) {
         <header>
           <div class="displayName">
           <img src="${tweet.user.avatars}">
-          <div>${tweet.user.name}</div>
+          <div class="user-name">${tweet.user.name}</div>
           </div>
           <div class="tweeterHandle">${tweet.user.handle}</div>
         </header>
@@ -78,76 +74,69 @@ const createTweetElement = function (tweet) {
 
 renderTweets(data);
 
-
-$("form").on("submit", function (e){
+$("form").on("submit", function (e) {
   e.preventDefault();
 
-  const data = $('#tweet-text').val();
-   if (data.trim() === "") {
+  const data = $("#tweet-text").val();
+  if (data.trim() === "") {
     $(".message").html("❌ Error, you can't input an empty tweet ❌");
-    $('.alert').slideDown()
+    $(".alert").slideDown();
     //  return "Error, you can't input an empty tweet";
-   } else if (data.length > 140) {
+  } else if (data.length > 140) {
     $(".message").html("❌ Character limit exceeded ❌");
-    $('.alert').slideDown()
+    $(".alert").slideDown();
     //  return "Character limit exceeded";
-   } else {
-     const tweetUrl = '/tweets/';
-     $(".message").html('');
-     $('.alert').slideUp();
-     $.ajax({
-       method: 'POST',
-       url: tweetUrl,
-       data:  $(this).serialize(),
-       success: function(data){
-          console.log(data);
-        }
-      })
-        .then(loadTweets());
-         $('.counter').val('140');
-         $('#tweet-text').val('');
-     }
-   })
-   
-
-
+  } else {
+    const tweetUrl = "/tweets/";
+    $(".message").html("");
+    $(".alert").slideUp();
+    $.ajax({
+      method: "POST",
+      url: tweetUrl,
+      data: $(this).serialize(),
+      success: function (data) {
+        console.log(data);
+      },
+    }).then(loadTweets());
+    $(".counter").val("140");
+    $("#tweet-text").val("");
+  }
+});
 
 const loadTweets = function () {
   $.ajax({
     type: "GET",
     url: `/tweets`,
   })
-  .then((response) =>{
-    console.log('response = ', response);
-    renderTweets(response);
-  })
-  .catch((error) => {
-    console.log('error =', error);
-  })
-}
-loadTweets()
+    .then((response) => {
+      console.log("response = ", response);
+      renderTweets(response);
+    })
+    .catch((error) => {
+      console.log("error =", error);
+    });
+};
+loadTweets();
 
-
-
- //  });
-    //  });
+//  });
+//  });
 //    }
 // });
 // ("submit", function (e){
 //   e.preventDefault();
 
-  // const data = $('#tweet-text').val();
-  //  if (data.trim() === "") {
-  //    return "Error, fix this!";
-  //  } else if (data.length > 140) {
-  //    return "Character limit exceeded"
-  //  } else {
-  //    const tweetUrl = '/tweets/';
-  //    $.ajax({
-  //      method: 'POST',
-  //      url: tweetUrl,
-  //      data:  $(this).serialize(),
-  //     })
-       
-  //   });
-  //  }
+// const data = $('#tweet-text').val();
+//  if (data.trim() === "") {
+//    return "Error, fix this!";
+//  } else if (data.length > 140) {
+//    return "Character limit exceeded"
+//  } else {
+//    const tweetUrl = '/tweets/';
+//    $.ajax({
+//      method: 'POST',
+//      url: tweetUrl,
+//      data:  $(this).serialize(),
+//     })
+
+//   });
+//  }

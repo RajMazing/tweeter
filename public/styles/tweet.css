@@ -1,7 +1,7 @@
 article {
   display: flex;
-  width: 80%;
-  margin: 0 auto;
+  width: 65%;
+  margin: auto;
   flex-direction: column;
   justify-content: center;
   border-top: 4px solid;
@@ -12,11 +12,10 @@ article {
 }
 
 article:hover {
-  box-shadow:8px 9px 0 #082649;
+  box-shadow: 8px 9px 0 #082649;
 }
 
-
-article header{
+article header {
   height: auto;
   display: flex;
   flex-direction: row;
@@ -26,16 +25,13 @@ article header{
   color: #545149;
   font-size: 24px;
   margin: 25px 20px 25px 20px;
- 
 }
 
-article header .tweeterHandle{
+article header .tweeterHandle {
   font-weight: 600;
-  color:black;
+  color: black;
   display: flex;
   margin-right: 10%;
-  
-  
 }
 
 article p {
@@ -47,7 +43,7 @@ article p {
   text-indent: 20px;
 }
 
-article footer{
+article footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,18 +51,22 @@ article footer{
   font-size: medium;
 }
 
-article footer .socials{
+article footer .socials {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 120px;
   color: purple;
 }
-.fas:hover { 
+.fas:hover {
   color: #d79920;
 }
 
-article header .fa-user{
+article header .fa-user {
   font-size: xx-large;
   font-weight: 600;
+}
+
+.user-name {
+  margin-left: 30px;
 }

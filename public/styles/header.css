@@ -1,18 +1,16 @@
-
-  
 header {
-  display:flex;
-  margin-top: 100px;
-  height:400px;
-  width:100%;
+  display: flex;
+  margin-top: 200px;
+  height: 400px;
+  width: 100%;
   background-color: rgb(1, 12, 17);
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("https://coolors.co/012169-4056a1-3a9259-76c893-c8102e-d79922-efe2ba-303030");
 }
 
 .name {
-  color: #FFFFFF;
-  font-size: 150%;;
+  color: #ffffff;
+  font-size: 100%;
 }

@@ -1,39 +1,36 @@
 .tweet {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
   width: 90%;
-  margin:1em;
+  margin: 1em;
 }
-
 
 section div {
   display: flex;
-  width: 600px;
-  font-family: 'Bungee', cursive;
+  width: 550px;
+  font-family: "Bungee", cursive;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 form {
   width: 100%;
 }
 
-
 output.counter {
-  display:flex;
+  display: flex;
   width: 100%;
   flex-direction: row-reverse;
   flex: 1;
-   
 }
 
 #tweet-text {
   display: flex;
   color: rgb(102, 101, 101);
   font-weight: bold;
-  font-size:80%;
+  font-size: 80%;
   width: 100%;
   background-color: transparent;
   column-count: 2;
@@ -42,20 +39,21 @@ output.counter {
   line-height: 0.75em;
   resize: none;
   margin-bottom: 1em;
-  outline:black;
+  outline: black;
 }
 
 button {
-background-color: blueviolet;
-color: white;
+  background-color: blueviolet;
+  color: white;
 }
 
 .alert {
   padding: 20px;
-  font-size:medium;
+  font-size: medium;
   background-color: transparent;
   border: 5px solid #62017a;
   color: #5c10a3;
   margin-bottom: 20px;
   display: none;
 }
+
