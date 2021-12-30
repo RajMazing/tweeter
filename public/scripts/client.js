@@ -3,6 +3,7 @@
 //  * jQuery is already loaded
 //  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 //  */
+
 $(document).ready(() => {
 const escaping = function (str) {
   let div = document.createElement("div");
@@ -58,6 +59,7 @@ const createTweetElement = function (tweet) {
 
 renderTweets(data);
 
+//Loading tweets faster
 const loadTweets = function () {
   $.ajax({
     type: "GET",
@@ -74,7 +76,7 @@ const loadTweets = function () {
 
 loadTweets();
 
-
+//link to submit button
 $("form").on("submit", function (e) {
   e.preventDefault();
   const data = $("#tweet-text").val();
@@ -92,8 +94,9 @@ $("form").on("submit", function (e) {
     $(".alert").slideUp();
 
     const tweetData =  $(this).serialize();
-    const tweetUrl = "/tweets/";
+    const tweetUrl = "http://localhost:8080/tweets";
     
+  
     $.ajax({
       method: "POST",
       url: tweetUrl,
@@ -103,7 +106,7 @@ $("form").on("submit", function (e) {
    .then((response) => {
      loadTweets();
     
-    // // $("#tweet-text").val("");
+    // $("#tweet-text").val("");
   })
   .catch((error) => {
 });
