@@ -48,6 +48,7 @@ const createTweetElement = function (tweet) {
           <div class="socials">
             <a class="fas fa-flag"></a>
             <a class="fas fa-retweet"></a>
+            <a class="fas fa-thumbs-up"></a>
             <a class="fas fa-heart"></a>
           </div>
         </footer>
