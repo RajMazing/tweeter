@@ -80,7 +80,6 @@ loadTweets();
 $("form").on("submit", function (e) {
   e.preventDefault();
   const data = $("#tweet-text").val();
-
   if (data.trim() === "") {
     $(".message").html("❌ Error, you can't input an empty tweet ❌");
     $(".alert").slideDown();
@@ -94,7 +93,7 @@ $("form").on("submit", function (e) {
     $(".alert").slideUp();
 
     const tweetData =  $(this).serialize();
-    const tweetUrl = "http://localhost:8080/tweets";
+    const tweetUrl = "http://localhost:8080/tweets/";
     
   
     $.ajax({
@@ -105,18 +104,15 @@ $("form").on("submit", function (e) {
 
    .then((response) => {
      loadTweets();
+     $(".counter").val('140');
+     $("#tweet-text").val('');
     
-    // $("#tweet-text").val("");
   })
-  .catch((error) => {
-});
+  .catch((error) => {});
 
-$("#tweet-text").val('');
 
- $("#counter").val("140");
   }
 });
-
 });
 
 
